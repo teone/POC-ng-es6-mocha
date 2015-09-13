@@ -2,7 +2,11 @@
   "name": "ng-es6-mocha",
   "version": "1.0.0",
   "description": "Proof Of Concept: Angular, Browserify, Mocha and ES6 Modules to simplify unit tests",
-  "main": "src/index.html",
+  "main": "index.html",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:teone/POC-ng-es6-mocha.git"
+  }
   "scripts": {
     "test": "mocha --compilers js:babel/register --recursive spec/ --watch",
     "browserify": "browserify src/app/index.js -t babelify -d --outfile dist/bundle.js",
