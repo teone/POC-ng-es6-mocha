@@ -5,7 +5,8 @@
   "main": "src/index.html",
   "scripts": {
     "test": "npm test",
-    "browserify": "browserify src/app/index.js -o src/app/bundle.js",
+    "browserify": "browserify src/app/index.js -o dist/bundle.js",
+    "server": "browser-sync start --files \"dist/main.css,dist/app.js\" --server ./ --reload-delay 1000",
     "start": ""
   },
   "author": "Matteo Scandolo",
