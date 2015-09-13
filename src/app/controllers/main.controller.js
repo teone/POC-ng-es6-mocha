@@ -1,7 +1,12 @@
 'use strict';
 
 function MainController (CustomService) {
-  this.text = 'Lorem Ipsum';
+  this.list = CustomService.list;
+
+  this.addToService = (item) => {
+    CustomService.add(item);
+    this.item = null;
+  }
 }
 
 export { MainController }
