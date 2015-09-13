@@ -2,4 +2,7 @@
 
 const angular = require('angular');
 
-angular.module('ngEs6',[]);
+import { MainController } from './controllers/main.controller.js';
+
+angular.module('ngEs6',[])
+.controller('MainController', MainController);
