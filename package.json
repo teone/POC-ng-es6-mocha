@@ -4,7 +4,7 @@
   "description": "POC Angular, Browserify and ES6 Modules",
   "main": "src/index.html",
   "scripts": {
-    "test": "npm test",
+    "test": "mocha --compilers js:babel/register --recursive spec/",
     "browserify": "browserify src/app/index.js -t babelify -d --outfile dist/bundle.js",
     "server": "browser-sync start --files \"dist/main.css,dist/bundle.js,index.html\" --server ./ --reload-delay 1000",
     "watch": "watchify -t babelify src/app/index.js -o dist/bundle.js",
@@ -17,6 +17,7 @@
     "babelify": "^6.3.0",
     "browser-sync": "^2.9.3",
     "browserify": "^11.1.0",
+    "chai": "^3.2.0",
     "eslint": "^1.4.1",
     "parallelshell": "^2.0.0",
     "watchify": "^3.4.0"
