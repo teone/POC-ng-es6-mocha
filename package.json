@@ -20,6 +20,7 @@
     "chai": "^3.2.0",
     "eslint": "^1.4.1",
     "parallelshell": "^2.0.0",
+    "sinon": "^1.16.1",
     "watchify": "^3.4.0"
   },
   "dependencies": {
