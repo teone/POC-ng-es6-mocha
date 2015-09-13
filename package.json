@@ -1,7 +1,7 @@
 {
   "name": "ng-es6-mocha",
   "version": "1.0.0",
-  "description": "POC Angular, Browserify, Mocha and ES6 Modules",
+  "description": "Proof Of Concept: Angular, Browserify, Mocha and ES6 Modules to simplify unit tests",
   "main": "src/index.html",
   "scripts": {
     "test": "mocha --compilers js:babel/register --recursive spec/ --watch",
