@@ -6,15 +6,19 @@
   "scripts": {
     "test": "npm test",
     "browserify": "browserify src/app/index.js -o dist/bundle.js",
-    "server": "browser-sync start --files \"dist/main.css,dist/app.js\" --server ./ --reload-delay 1000",
-    "start": ""
+    "server": "browser-sync start --files \"dist/main.css,dist/app.js,index.html\" --server ./ --reload-delay 1000",
+    "watch": "watchify src/app/index.js -o dist/bundle.js",
+    "start": "npm run browserify && parallelshell \"npm run watch\" \"npm run server\""
   },
   "author": "Matteo Scandolo",
   "license": "ISC",
   "devDependencies": {
     "babel": "^5.8.23",
     "browser-sync": "^2.9.3",
-    "browserify": "^11.1.0"
+    "browserify": "^11.1.0",
+    "eslint": "^1.4.1",
+    "parallelshell": "^2.0.0",
+    "watchify": "^3.4.0"
   },
   "dependencies": {
     "angular": "^1.4.5"
