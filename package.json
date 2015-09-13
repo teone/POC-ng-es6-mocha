@@ -4,11 +4,11 @@
   "description": "POC Angular, Browserify and ES6 Modules",
   "main": "src/index.html",
   "scripts": {
-    "test": "mocha --compilers js:babel/register --recursive spec/",
+    "test": "mocha --compilers js:babel/register --recursive spec/ --watch",
     "browserify": "browserify src/app/index.js -t babelify -d --outfile dist/bundle.js",
     "server": "browser-sync start --files \"dist/main.css,dist/bundle.js,index.html\" --server ./ --reload-delay 1000",
     "watch": "watchify -t babelify src/app/index.js -o dist/bundle.js",
-    "start": "npm run browserify && parallelshell \"npm run watch\" \"npm run server\""
+    "start": "npm run browserify && parallelshell \"npm run watch\" \"npm run server\" \"npm test\""
   },
   "author": "Matteo Scandolo",
   "license": "ISC",
