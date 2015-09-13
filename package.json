@@ -6,7 +6,7 @@
   "scripts": {
     "test": "npm test",
     "browserify": "browserify src/app/index.js -t babelify -d --outfile dist/bundle.js",
-    "server": "browser-sync start --files \"dist/main.css,dist/app.js,index.html\" --server ./ --reload-delay 1000",
+    "server": "browser-sync start --files \"dist/main.css,dist/bundle.js,index.html\" --server ./ --reload-delay 1000",
     "watch": "watchify -t babelify src/app/index.js -o dist/bundle.js",
     "start": "npm run browserify && parallelshell \"npm run watch\" \"npm run server\""
   },
