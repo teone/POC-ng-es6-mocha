@@ -1,17 +1,18 @@
 {
-  "name": "ng-es6",
+  "name": "ng-es6-mocha",
   "version": "1.0.0",
-  "description": "POC Angular, Browserify and ES6 Modules",
+  "description": "POC Angular, Browserify, Mocha and ES6 Modules",
   "main": "src/index.html",
   "scripts": {
     "test": "mocha --compilers js:babel/register --recursive spec/ --watch",
     "browserify": "browserify src/app/index.js -t babelify -d --outfile dist/bundle.js",
     "server": "browser-sync start --files \"dist/main.css,dist/bundle.js,index.html\" --server ./ --reload-delay 1000",
     "watch": "watchify -t babelify src/app/index.js -o dist/bundle.js",
+    "prestart": "npm install",
     "start": "npm run browserify && parallelshell \"npm run watch\" \"npm run server\" \"npm test\""
   },
   "author": "Matteo Scandolo",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "babel": "^5.8.23",
     "babelify": "^6.3.0",
