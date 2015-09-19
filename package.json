@@ -6,7 +6,7 @@
   "repository": {
     "type": "git",
     "url": "git@github.com:teone/POC-ng-es6-mocha.git"
-  }
+  },
   "scripts": {
     "test": "mocha --compilers js:babel/register --recursive spec/ --watch",
     "browserify": "browserify src/app/index.js -t babelify -d --outfile dist/bundle.js",
