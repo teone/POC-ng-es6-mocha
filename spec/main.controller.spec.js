@@ -5,7 +5,7 @@ const sinon = require('sinon'); // understand why import does not work here
 
 import {MainController} from '../src/app/controllers/main.controller.js';
 
-var mockService, ctrl;
+var mockService, mockGithub, ctrl;
 
 describe('The Main Controller', function() {
 
@@ -17,8 +17,13 @@ describe('The Main Controller', function() {
       add: sinon.spy()
     }
 
+    // define mockGithub
+    mockGithub = {
+      loadUser: sinon.spy().returns(when('ciao'))
+    }
+
     // instantiate the controller
-    ctrl = new MainController(mockService);
+    ctrl = new MainController(mockService, mockGithub);
   });
 
   it('should load the list', function(){
