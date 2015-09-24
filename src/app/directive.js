@@ -1,10 +1,10 @@
 'use strict';
 
-function ctrl(){
+export function ctrl(){
   this.name = 'Misko Hevery';
 };
 
-const directiveBuilder = () => {
+export default function(){
   return {
     restrict: 'E',
     controller: ctrl,
@@ -14,5 +14,3 @@ const directiveBuilder = () => {
     bindToController: true
   };
 };
-
-export {directiveBuilder as myDirective}

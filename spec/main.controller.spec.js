@@ -7,7 +7,7 @@ import {MainController} from '../src/app/controllers/main.controller.js';
 
 var mockService, mockGithub, ctrl;
 
-describe('The Main Controller', function() {
+xdescribe('The Main Controller', function() {
 
   beforeEach(function() {
 
