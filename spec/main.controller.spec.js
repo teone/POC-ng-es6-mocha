@@ -2,12 +2,13 @@
 
 import {expect} from 'chai';
 const sinon = require('sinon'); // understand why import does not work here
+require('sinon-as-promised');
 
 import {MainController} from '../src/app/controllers/main.controller.js';
 
-var mockService, mockGithub, ctrl;
+var mockService, mockGithub, ctrl, stub;
 
-xdescribe('The Main Controller', function() {
+describe('The Main Controller', function() {
 
   beforeEach(function() {
 
@@ -19,7 +20,7 @@ xdescribe('The Main Controller', function() {
 
     // define mockGithub
     mockGithub = {
-      loadUser: sinon.spy().returns(when('ciao'))
+      loadUser: sinon.stub().resolves('foo')
     }
 
     // instantiate the controller
@@ -34,4 +35,10 @@ xdescribe('The Main Controller', function() {
     ctrl.addToService(3);
     expect(mockService.add.called).to.equal(true);
   });
+
+  it('should load data from the gitHub Service', () => {
+    console.log('expect');
+    expect(ctrl.res).to.equal('foo');
+  });
+
 });

@@ -26,6 +26,7 @@
     "eslint": "^1.4.1",
     "parallelshell": "^2.0.0",
     "sinon": "^1.16.1",
+    "sinon-as-promised": "^4.0.0",
     "watchify": "^3.4.0"
   },
   "dependencies": {

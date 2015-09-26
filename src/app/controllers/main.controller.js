@@ -8,9 +8,12 @@ function MainController (CustomService, GithubService) {
     this.item = null;
   }
 
+  this.res = 'pre';
+
   GithubService.loadUser('teone')
   .then(res => {
-    console.log(res);
+    console.log('resolved');
+    this.res = res;
   })
   .catch(err => {
     console.warn(err);
